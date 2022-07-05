@@ -20,12 +20,16 @@ export const TaskCard: React.FC<TaskCardProps> = ({
   return (
     <>
       <div className={styles.taskCard}>
-        <input
-          className={styles.checkbox}
-          type='checkbox'
-          checked={task.status === 'done'}
-          onChange={handleChangeTaskStatus}
-        />
+        <div className={styles.checkbox}>
+          <input
+            id='checkbox'
+            type='checkbox'
+            checked={task.status === 'done'}
+            onChange={handleChangeTaskStatus}
+          />
+          <label htmlFor='checkbox'></label>
+        </div>
+
         <p
           style={{
             textDecoration: task.status === 'done' ? 'line-through' : 'none',
