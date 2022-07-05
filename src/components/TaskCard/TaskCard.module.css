@@ -1,0 +1,43 @@
+.taskCard {
+  width: 100%;
+  min-height: 4.5rem;
+  padding: 1rem;
+  border-radius: 8px;
+  background-color: var(--gray-500);
+  border: 1px solid var(--gray-400);
+  color: var(--gray-100);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.taskTitle {
+  max-width: 50rem;
+}
+.icon {
+  color: var(--gray-300);
+  transition: color 0.2s ease;
+}
+.deleteButton {
+  cursor: pointer;
+  border-radius: 4px;
+  height: 28px;
+  width: 28px;
+  padding: 2px;
+  background-color: transparent;
+  border: 0;
+  margin-left: 0.75rem;
+}
+.deleteButton:hover {
+  cursor: pointer;
+  background-color: var(--gray-400);
+}
+.deleteButton:hover .icon {
+  color: var(--danger);
+}
+
+.checkbox {
+  accent-color: var(--purple);
+  height: 20px;
+  width: 20px;
+  margin-right: 0.75rem;
+}

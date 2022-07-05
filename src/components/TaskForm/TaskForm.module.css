@@ -1,0 +1,37 @@
+.taskForm {
+  display: flex;
+  width: 100%;
+  gap: 0.5rem;
+  margin-top: -1.6876rem;
+}
+.inputTask {
+  max-width: 39.875rem;
+  width: 100%;
+  height: 3.375rem;
+  background-color: var(--gray-500);
+  border-radius: 8px;
+  padding: 1rem;
+  border: transparent;
+  color: var(--gray-100);
+}
+
+.taskForm button[type='submit'] {
+  background-color: var(--blueDark);
+  border-radius: 8px;
+  border: transparent;
+  cursor: pointer;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: var(--white);
+  font-weight: bold;
+}
+.taskForm button[type='submit']:disabled {
+  cursor: not-allowed;
+}
+
+.taskForm button[type='submit']:not(:disabled):hover {
+  background-color: var(--blue);
+}

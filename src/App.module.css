@@ -1,0 +1,7 @@
+.main {
+  display: grid;
+  max-width: 736px;
+  margin: 0 auto;
+  place-items: center;
+  gap: 4rem;
+}
