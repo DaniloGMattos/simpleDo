@@ -1,7 +1,7 @@
 import { Header } from './components/Header';
 import styles from './App.module.css';
 import { TaskForm } from './components/TaskForm';
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import { TaskList } from './components/TaskList';
 interface Task {
   title: string;
@@ -13,12 +13,12 @@ function App() {
   const onChangeTask = (newTask: string) => {
     setTaskToBeAdded(newTask);
   };
-  const onCreateTask = () => {
+  const onCreateTask = useCallback(() => {
     setTasks((state) => {
       return [...state, { title: taskToBeAdded, status: 'todo' }];
     });
     setTaskToBeAdded('');
-  };
+  }, [taskToBeAdded]);
   const onDeleteTask = (taskTile: string) => {
     setTasks((state) => state.filter((task) => task.title !== taskTile));
   };
@@ -36,6 +36,7 @@ function App() {
       <Header />
       <main className={styles.main}>
         <TaskForm
+          tasks={tasks}
           onChangeTask={onChangeTask}
           onCreateTask={onCreateTask}
           taskTitle={taskToBeAdded}
